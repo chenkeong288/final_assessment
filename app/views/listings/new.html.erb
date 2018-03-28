@@ -1,0 +1,12 @@
+<%= form_for @listing do |n| %>
+  Car brand: <%= n.text_area :car_brand, placeholder: "enter 'car brand' here" %> <br/>
+  Car model: <%= n.text_area :car_model, placeholder: "enter 'car model' here" %> <br/>
+  Description: <%= n.text_area :description, placeholder: "enter 'description' here" %> <br/>
+  Location: <%= n.text_area :location_of_seller, placeholder: "enter 'location' here" %> <br/>
+  Price: <%= n.number_field :price, placeholder: "RM"%> <br/>
+
+  <%= n.submit "Submit Posting" %>
+
+<%end%>
+
+

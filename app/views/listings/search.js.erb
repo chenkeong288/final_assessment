@@ -1,0 +1,6 @@
+$("#vehicle_listings").html("");
+
+$("<%= escape_javascript(  render partial: 'listings/index') %>").appendTo("#vehicle_listings");        
+
+
+

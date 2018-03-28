@@ -1,0 +1,10 @@
+<%= form_for @listing_to_edit do |edt| %>
+  <%= edt.text_area :car_brand, placeholder: "edit 'car brand' here"%> <br/>
+  <%= edt.text_area :car_model, placeholder: "edit 'car model' here"%> <br/>
+  <%= edt.text_area :description, placeholder: "edit 'description' here"%> <br/>
+  <%= edt.text_area :location_of_seller, placeholder: "edit 'location' here"%> <br/>
+  Price: <%= edt.number_field :price, placeholder: "RM"%> <br/>
+  
+  <%= edt.submit "Submit Edit" %>
+<%end%>
+

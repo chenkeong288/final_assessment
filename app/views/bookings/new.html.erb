@@ -1,0 +1,13 @@
+<%= form_for [@list_for_booking, @booking] do |bk| %>
+  Date: <%= bk.text_field :date, id:"bookingDate" %> <br/>
+  Start time: <%= bk.time_select :start_time %> <br/>
+  End time: <%= bk.time_select :end_time %> <br/>
+
+  <%= bk.submit "Create Booking"%>
+<%end%>
+
+
+
+<script>
+  flatpickr("#bookingDate", {dateFormat: 'd-m-Y'})
+</script>

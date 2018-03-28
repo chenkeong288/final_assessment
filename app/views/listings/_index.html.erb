@@ -1,0 +1,14 @@
+<% @listings.each do |car| %>
+  <br/>
+  <%= car.car_brand %> <br/>
+  <%= car.car_model %> <br/>
+  <%= car.location_of_seller %> <br/>
+  <i>RM</i> <%= car.price.to_i %> <br/>
+
+  <%= link_to "Show me this car", listing_path(car) %> <br/>        <!-- (car) gives id for this listing-->
+  <%= link_to "Delete listing", listing_path(car), method: :delete, data:{confirm: "Are you sure?"} %> <br/>
+
+  <%= link_to "Edit post", edit_listing_path(car) %> <br/>
+
+<%end%>
+
