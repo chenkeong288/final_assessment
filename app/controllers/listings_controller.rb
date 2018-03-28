@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_action :authorize, only: [:new, :create, :destroy, :edit]
 
   def index
     @listings = Listing.order(updated_at: :asc)
@@ -62,9 +63,6 @@ class ListingsController < ApplicationController
        redirect_to listings_path, notice: "Only owner of the car is eligible to edit!"
 
     end
-
-
-
 
   end
 

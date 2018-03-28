@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authorize, only: [:new, :create]
+
 
   #need to declare @listing_for_booking and @booking because the url have 2 objects which are, /listings and /bookings
   def new                
