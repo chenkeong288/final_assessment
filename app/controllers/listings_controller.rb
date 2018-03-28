@@ -30,17 +30,42 @@ class ListingsController < ApplicationController
   end
 
 
-  #Delete - Alternative way to write delete is in AirBnb code
   def destroy
-    @listing_to_delete = current_user.listings.find(params[:id])
-    @listing_to_delete.delete
 
-    redirect_to listings_path
+    @listing_to_delete = Listing.find(params[:id])
+
+    if @listing_to_delete.user_id == current_user.id
+
+      @listing_to_delete.destroy
+
+      redirect_to listings_path
+
+    else 
+
+      redirect_to listings_path, notice: "Only owner of the car is eligible to delete!"
+  
+    end
+
   end 
 
 
   def edit
-    @listing_to_edit = current_user.listings.find(params[:id])
+
+    @listing_to_edit = Listing.find(params[:id])
+
+    if @listing_to_edit.user_id == current_user.id
+
+      render 'edit'
+
+    else
+
+       redirect_to listings_path, notice: "Only owner of the car is eligible to edit!"
+
+    end
+
+
+
+
   end
 
 

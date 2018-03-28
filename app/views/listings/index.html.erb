@@ -22,10 +22,10 @@
 
               <div class="col-4">
                 <div class="individual-listing-container">  
-                    
-                   <i class= "prefix">Car brand</i> <%= car.car_brand %> <br/>
-                   <i class= "prefix">Car model</i> <%= car.car_model %> <br/>
-                   <i class= "prefix">Location </i> <%= car.location_of_seller %> <br/>
+              
+                    <i class= "prefix">Car brand</i> <%= car.car_brand %> <br/>
+                    <i class= "prefix">Car model</i> <%= car.car_model %> <br/>
+                    <i class= "prefix">Location </i> <%= car.location_of_seller %> <br/>
                     <i>RM</i> <%= car.price.to_i %> <br/>
 
                     <%= link_to "Show me this car", listing_path(car) %> <br/>        <!-- (car) gives id for this listing-->
