@@ -1,14 +1,39 @@
-<% @listings.each do |car| %>
-  <br/>
-  <%= car.car_brand %> <br/>
-  <%= car.car_model %> <br/>
-  <%= car.location_of_seller %> <br/>
-  <i>RM</i> <%= car.price.to_i %> <br/>
+<div id="vehicle_listings">
 
-  <%= link_to "Show me this car", listing_path(car) %> <br/>        <!-- (car) gives id for this listing-->
-  <%= link_to "Delete listing", listing_path(car), method: :delete, data:{confirm: "Are you sure?"} %> <br/>
+<%= link_to "Sell a Car", new_listing_path %> <br/> <br/>
 
-  <%= link_to "Edit post", edit_listing_path(car) %> <br/>
+  <% if @listings.length >0 %>
 
-<%end%>
+      <div class="container">
+        <div class="row">
 
+          <% @listings.each do |car| %>
+
+              <div class="col-4">
+                <div class="individual-listing-container">  
+                    
+                   <i class= "prefix">Car brand</i> <%= car.car_brand %> <br/>
+                   <i class= "prefix">Car model</i> <%= car.car_model %> <br/>
+                   <i class= "prefix">Location </i> <%= car.location_of_seller %> <br/>
+                    <i>RM</i> <%= car.price.to_i %> <br/>
+
+                    <%= link_to "Show me this car", listing_path(car) %> <br/>        <!-- (car) gives id for this listing-->
+                    <%= link_to "Delete listing", listing_path(car), method: :delete, data:{confirm: "Are you sure?"} %> <br/>
+
+                    <%= link_to "Edit post", edit_listing_path(car) %> <br/>
+
+                </div>
+              </div>
+
+          <%end%>
+
+        </div>
+      </div>
+
+  <%else%>
+
+      <p> <i><%= "Your search did not match any result. Please try a different search." %></i> </p>
+
+  <%end%>
+
+</div>
