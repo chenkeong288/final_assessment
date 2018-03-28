@@ -1,8 +1,10 @@
 <br/>
 <i class= "prefix"> Car brand </i> <%= @listing_for_show.car_brand%> <br/>
 <i class= "prefix"> Car model </i> <%= @listing_for_show.car_model%> <br/>
-<i class= "prefix"> Location </i> <%= @listing_for_show.location_of_seller%> <br/> <br/>
-<i class= "prefix"> Description </i><%= @listing_for_show.description%> <br/>
+<i class= "prefix">Contact seller at</i> <%= @listing_for_show.user.email %> <br/>
+<i class= "prefix"> Location </i> <%= @listing_for_show.location_of_seller%> <br/>
+
+<i class= "prefix"> Description </i><%= @listing_for_show.description%> <br/><br/>
 
 <%= link_to "Show all Cars", listings_path%>
 <%= link_to "Book for test drive", new_listing_booking_path(@listing_for_show.id)%><br/> <br/> <br/>
